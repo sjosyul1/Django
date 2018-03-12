@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% block head %}
+<title> Message </title>
+{% endblock %}
+
+{% block body %}
+	<header class="container" id="site_header" >
+            <div id="icon" class="image">
+
+            {% load static %}
+            <a href="#">
+            <img src="{% static 'portal/pmc.png' %}" alt="" title=""
+                      width="167" height="88" />
+			</a>
+
+			</div>
+
+	</header>
+
+	    	<div class="container-fluid">
+    <nav class="navbar navbar-default navheader">
+        <div class="navbar-header ">
+        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+      </div>
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav  navbar-right">
+		    <li><a href="{% url 'home' %}">Home</a></li>
+		    <li><a href="{% url 'failanalys' %}">View Failure Analysis</a></li>
+            <li><a href="{% url 'register' %}">Register</a></li>
+            <li><a href="{% url 'login' %}">Login</a></li>
+        </ul>
+
+     </div>
+    </nav>
+</div>
+
+			<br/>
+			<br/>
+
+
+				<h2>Message</h2>
+			<br/>
+			<br/>
+
+
+                <h3> {{ message }} </h3>
+                <h3> {{ name }} </h3>
+
+
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+
+	<div class="footer navbar-fixed-bottom">
+           <div id="footer" class="fixed-bottom">
+              <div class="container">
+              <br/>
+                        <p> Photovoltaic Module Certification </p>
+                        <p> <a href="http://asu.edu" >ASU website </a> ©All rights reserved. </p>
+              </div>
+            </div>
+        </div>
+
+
+{% endblock %}

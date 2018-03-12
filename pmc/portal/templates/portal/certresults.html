@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title> Certification </title>
+{% endblock %}
+
+{% block body %}
+	<header class="container" id="site_header" >
+            <div id="icon" class="image">
+
+            {% load static %}
+            <a href="#">
+            <img src="{% static 'portal/pmc.png' %}" alt="" title=""
+                      width="167" height="88" />
+			</a>
+
+			</div>
+
+	</header>
+
+<div class="container-fluid">
+    <nav class="navbar navbar-default navheader">
+        <div class="navbar-header ">
+        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+      </div>
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav  navbar-right">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'failanalys' %}">View Failure Analysis</a></li>
+            <li><a href="{% url 'register' %}">Register</a></li>
+            <li><a href="{% url 'login' %}">Login</a></li>
+        </ul>
+
+     </div>
+    </nav>
+</div>
+
+			<br/>
+			<br/>
+
+				<h2>Certification details</h2>
+			<br/>
+
+
+                <h3> The Certification status of product with ModelNo {{ productID }} is : {{ certification }} </h3>
+                <br />
+                <h3> Analyzing results:</h3>
+                <p align="center"><br/>
+                 Sequence A is pass if UV test, Thermal Cycling (TC50) test, Humidity Freeze tests are passed. <br/>
+                 Sequence B is pass if Thermal Cycling (TC200) test is passed.<br/>
+                 Sequence C is pass if Damp Heat test is passed. <br/>
+                 Sequence Z is pass if Baseline tests are passed. <br/>
+
+                </p>
+                <br/>
+                <br />
+                 <br/>
+
+      <!--wrap your page content-->
+
+	  <div class="wrap">
+
+
+        <div class = ".col-md-6 .offset-md-3" >
+
+                    <table border="2" align="center"  class="table table-striped" >
+                        <tr>
+                            <th>Sequence</th>
+                            <th>Verdict</th>
+                <!--            <th>Isc</th>
+                            <th>Voc</th>
+                            <th>Imp</th>
+                            <th>Vmp</th>
+                            <th>FF</th>
+                            <th>Pmp</th>
+                    -->
+                        </tr>
+
+                        {% for r in results %}
+                        <tr>
+                            {% for v in r %}
+                            <td>{{v}}</td>
+                            {% endfor %}
+                        </tr>
+                        {% endfor %}
+                    </table>
+</div></div>
+
+			<br/>
+			<br/>
+
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+
+	<br/>
+		<div class="footer navbar-fixed-bottom">
+	   <div id="footer" class="fixed-bottom">
+      <div class="container">
+	  <br/>
+				<p> Photovoltaic Module Certification </p>
+				<p> <a href="http://asu.edu" >ASU website </a> ©All rights reserved. </p>
+      </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% block head %}
+<title> Failure Analysis </title>
+{% endblock %}
+
+{% block body %}
+	<header class="container" id="site_header" >
+            <div id="icon" class="image">
+
+            {% load static %}
+            <a href="#">
+            <img src="{% static 'portal/pmc.png' %}" alt="" title=""
+                      width="167" height="88" />
+			</a>
+
+			</div>
+
+	</header>
+
+	    	<div class="container-fluid">
+    <nav class="navbar navbar-default navheader">
+        <div class="navbar-header ">
+        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+      </div>
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav  navbar-right">
+		    <li><a href="{% url 'home' %}">Home</a></li>
+		    <li class="active"><a href="{% url 'failanalys' %}">View Failure Analysis</a></li>
+            <li><a href="{% url 'register' %}">Register</a></li>
+            <li><a href="{% url 'login' %}">Login</a></li>
+        </ul>
+
+     </div>
+    </nav>
+</div>
+
+			<br/>
+
+		<h2 style="text-align: center">Failure Analysis Chart</h2>
+		<!--	<h2>Welcome {{ request.COOKIES.ManufacturerName }}</h2> From Cookie if needed-->
+		<br/>
+
+      <!-- Content goes here -->
+            {% load chart_tags %}
+            {% chart %}
+                http://chart.apis.google.com/chart
+                       ?chxr=0,0,100
+                       &chxt=x,y
+                       &&chxl=0:|TC200|UV Test|TC50|DH|HF10
+                       &chbh=a
+                       &chs=480x240
+                       &cht=bvs
+                       &chco=4D89F9
+                       &chds=0,100
+                       &chd=t:{{ message }}
+                       &chtt= c-Si Technologies (2017 - 2017)
+            {% endchart %}
+
+            <br />
+            <br/>
+            <p>Note: Y-axis - % of failed tests, X-axis Testname <br/>
+                     TC - Thermal Cycling
+                     UV - Ultra Violet
+                     HF - Humidity Freeze
+                     DH - Damp Heat
+
+              <br/> <br>
+               Failure Analysis charts shows the failure percentage of each inidividual tests for the products tested for Certification
+            </p>
+
+            <br/>
+            <br/>
+
+
+	<br/>
+<div class="footer navbar-fixed-bottom">
+	   <div id="footer" class="fixed-bottom">
+      <div class="container">
+	  <br/>
+				<p> Photovoltaic Module Certification </p>
+				<p> <a href="http://asu.edu" >ASU website </a> ©All rights reserved. </p>
+      </div>
+    </div>
+</div>
+
+{% endblock %}

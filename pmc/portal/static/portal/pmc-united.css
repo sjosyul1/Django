@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
+body {
+  font-family: "Ubuntu", Tahoma, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #333333;
+  background-color: #ffffff;
+    text-align: center;
+}
+
+.wrap {
+	text-align: center;
+	margin: auto;
+	max-width: 70%;
+	min-width: 70%;
+/*	background: #D9F0FD; */
+	height: 90%;
+}
+
+h1 {
+  margin: 0.67em 0;
+  font-size: 2.5em;
+}
+
+h3 {
+  margin: 0.67em 0;
+  font-size: 1.5em;
+}
+
+/*form button margin */
+.col-xs-9 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-bottom: 7px;
+}
+/*input box size reduction*/
+.form-control {
+	width: 50%;
+}
+
+.form-horizontal .radio {
+    float: left;
+}
+
+/*for buttons */
+.custom {
+    width: 160px !important;
+}
+
+/*table wrap */
+.table-wrap {
+  height: 275px;
+  overflow-y: auto;
+}
+
+/* new edits - color for nav bar, footer */
+
+.alignment
+{
+	width: 80%;
+      float: left;
+      clear: both;
+      border-top: 1px solid #ccc;
+	margin-right: 10px;
+      margin-top: 20px;
+	 margin-left: 130px;
+      background: none;
+      position: relative;
+
+
+	background: #6495ED;
+
+}
+.navheader
+{
+	background: #6495ED;
+	/*background: #3399ff;*/
+	margin: auto;
+	width: auto;
+}
+#footer {
+ 	background: #6495ED;
+  	margin: auto;
+	text-align:center;
+	width: auto;
+
+}
+
+
+/*table wrap */
+.table-wrap {
+  height: 375px;
+  overflow-y: auto;
+}

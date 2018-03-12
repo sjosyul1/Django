@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+{% block head %}
+<title> Manufacturer Home </title>
+{% endblock %}
+
+{% block body %}
+
+	<header class="container" id="site_header" >
+            <div id="icon" class="image">
+
+            {% load static %}
+            <a href="#">
+            <img src="{% static 'portal/pmc.png' %}" alt="" title=""
+                      width="167" height="88" />
+			</a>
+
+			</div>
+
+	</header>
+
+    <div class="container-fluid">
+    <nav class="navbar navbar-default navheader">
+        <div class="navbar-header ">
+        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+      </div>
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav  navbar-right">
+		 <!--   <li class="active"><a href="{% url 'home' %}">Home</a></li> -->
+            <li><a href="{% url 'logout' %}">Logout ({{ name }})</a></li>
+        </ul>
+
+     </div>
+    </nav>
+
+
+    <div class="col-sm-4 col-lg-2">
+
+	<br/>
+
+	 <a href="{% url 'addprod'%}">
+				<input type="button" value="Add Product" class="btn btn-primary custom" style="float: left; margin-left:16px">
+			</a>
+
+			<br/>
+			<br/>
+
+			<a href="{% url 'seltestlab'%}">
+				<input type="button" value="Select Test Lab" class="btn btn-primary custom" style="float: left; margin-left:16px">
+			</a>
+
+			<br/>
+			<br/>
+			<a href="{% url 'viewdetcert'%}">
+				<input type="button" value="View Certification" class="btn btn-primary custom" style="float: left; margin-left:16px">
+			</a>
+
+			<br/>
+			<br/>
+			<a href="{% url 'allowaccess'%}">
+				<input type="button" value="Control Access" class="btn btn-primary custom" style="float: left; margin-left:16px">
+			</a>
+
+			<br/>
+			<br/>
+			<a href="{% url 'viewprods'%}">
+				<input type="button" value="View Products" class="btn btn-primary custom" style="float: left; margin-left:16px">
+			</a>
+
+		<br/>
+		<br/>
+			<br/>
+
+
+    </div>
+
+    <div class="col-sm-8 col-lg-10">
+      <!--wrap your page content-->
+
+	  <div class="wrap" >
+
+
+        <div class = "col-md-8 text-left">
+
+
+		<h2 style="text-align: center">Welcome {{ name }}</h2>
+		<!--	<h2>Welcome {{ request.COOKIES.ManufacturerName }}</h2> From Cookie if needed-->
+		<br/>
+      <!-- Content goes here -->
+	 		    <p> Welcome to the Manufacturer's portal!
+	 		        Since you are done with the registration, you can go ahead and add the products that you want to get certified.
+	 		        After you are done with adding a product, you can select a Lab among our registered Testing Labs for the product to be tested.
+					Once the Testing Lab has finished testing, the detailed results will be available on our portal.
+					We also provide you with an option to allow or disallow public access to the detailed test report.
+					Hope you have a wonderful experience using our portal!
+
+				</p>
+	    </div>
+
+    </div> <!--wrap closing -->
+
+    </div>
+  </div>
+</div>
+
+
+
+    <br/>
+    <div class="footer navbar-fixed-bottom">
+           <div id="footer" class="fixed-bottom">
+              <div class="container">
+              <br/>
+                        <p> Photovoltaic Module Certification </p>
+                        <p> <a href="http://asu.edu" >ASU website </a> ©All rights reserved. </p>
+              </div>
+            </div>
+        </div>
+
+
+{% endblock %}
